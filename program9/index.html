@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Advik Gupta | Flexbox and Grid Together</title>
+  <style>
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #1e293b;
+      --color-light: #f1f5f9;
+      --color-white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--color-light);
+      color: var(--color-dark);
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: 220px 1fr;           
+      grid-template-rows: auto 1fr auto;          
+      grid-template-areas:
+        "header  header"
+        "sidebar content"
+        "footer  footer";
+      min-height: 100vh;
+      gap: 16px;
+    }
+
+    .header  { grid-area: header; }
+    .sidebar { grid-area: sidebar; }
+    .content { grid-area: content; }
+    .footer  { grid-area: footer; }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      padding: 16px 24px;
+    }
+    .header ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    .header a { color: var(--color-white); text-decoration: none; }
+
+    .sidebar {
+      background-color: var(--color-white);
+      padding: 16px;
+    }
+    .sidebar li { margin-bottom: 8px; list-style: none; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: var(--color-white);
+      padding: 16px;
+      border-radius: 8px;
+      min-height: 150px;
+    }
+    .card button {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: none;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .footer {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      text-align: center;
+      padding: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "content"
+          "footer";
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <header class="header">
+      <h1>A Advik Gupta</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <h3>Topics</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Java</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <div class="cards">
+        <div class="card">
+          <div>
+            <h3>Project One</h3>
+            <p>Bio page.</p>
+          </div>
+          <button>View</button>
+        </div>
+        <div class="card">
+          <div>
+            <h3>Project Two</h3>
+            <p>Portfolio site.</p>
+          </div>
+          <button>View</button>
+        </div>
+        <div class="card">
+          <div>
+            <h3>Project Three</h3>
+            <p>Grid layout.</p>
+          </div>
+          <button>View</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 A Advik Gupta | Bosscoder School of Technology | advikguptaallampally@gmail.com</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
