@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Advik Gupta | Newspaper Layout</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, serif;
+      background-color: #f5f5f0;
+      color: #222;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .newspaper {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;   
+      gap: 20px;
+    }
+
+    .masthead {
+      grid-column: 1 / 4;                  
+      text-align: center;
+      border-bottom: 3px double #222;
+      padding-bottom: 12px;
+    }
+    .masthead h1 { font-size: 3rem; }
+
+    .footer {
+      grid-column: 1 / -1;                 
+      text-align: center;
+      border-top: 1px solid #222;
+      padding-top: 12px;
+    }
+
+    .column {
+      background-color: #fff;
+      padding: 16px;
+      border: 1px solid #ccc;
+    }
+    .column h2 { margin-bottom: 8px; }
+
+    @media (max-width: 700px) {
+      .newspaper { grid-template-columns: 1fr; }
+      .masthead, .footer { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="newspaper">
+
+    <header class="masthead">
+      <h1>The Advik Daily</h1>
+      <p>Monday, 9 November 2026 | Bosscoder School of Technology</p>
+    </header>
+
+    <aside class="column">
+      <h2>Quick News</h2>
+      <p>Learning CSS Grid is fun. Grid lets us make rows and columns easily.</p>
+    </aside>
+
+    <main class="column">
+      <h2>Main Story</h2>
+      <p>A. Advik Gupta, a first-year BTech CSE (AI/ML) student at Bosscoder School of Technology.</p>
+    </main>
+
+    <aside class="column">
+      <h2>Weather</h2>
+      <p>Sunny </p>
+    </aside>
+
+    <footer class="footer">
+      <p>&copy; 2026 A Advik Gupta | advikguptaallampally@gmail.com</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
