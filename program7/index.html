@@ -3,81 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Advik Gupta | Newspaper Layout</title>
+  <title>A Advik Gupta | Portfolio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #1e293b;
+      --color-light: #f1f5f9;
+      --color-white: #ffffff;
 
+      --font-main: Arial, Helvetica, sans-serif;
+
+      --text-small: 0.875rem;
+      --text-base: 1rem;
+      --text-large: 1.5rem;
+      --text-xl: 2.5rem;
+
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Typography */
     body {
-      font-family: Georgia, serif;
-      background-color: #f5f5f0;
-      color: #222;
-      padding: 20px;
+      font-family: var(--font-main);
+      font-size: var(--text-base);
       line-height: 1.6;
+      color: var(--color-dark);
+      background-color: var(--color-light);
     }
 
-    .newspaper {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;   
-      gap: 20px;
+    h1 { font-size: var(--text-xl); }
+    h2 { font-size: var(--text-large); margin-bottom: var(--space-2); }
+    h3 { font-size: 1.2rem; margin-bottom: var(--space-1); }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      padding: var(--space-3);
     }
 
-    .masthead {
-      grid-column: 1 / 4;                  
+    nav ul { list-style: none; }
+    nav a { color: var(--color-white); margin-right: var(--space-2); }
+
+    main { padding: var(--space-3); }
+    section { margin-bottom: var(--space-3); }
+
+    article {
+      background-color: var(--color-white);
+      padding: var(--space-2);
+      margin-bottom: var(--space-2);
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: var(--color-dark);
+      color: var(--color-white);
       text-align: center;
-      border-bottom: 3px double #222;
-      padding-bottom: 12px;
-    }
-    .masthead h1 { font-size: 3rem; }
-
-    .footer {
-      grid-column: 1 / -1;                 
-      text-align: center;
-      border-top: 1px solid #222;
-      padding-top: 12px;
-    }
-
-    .column {
-      background-color: #fff;
-      padding: 16px;
-      border: 1px solid #ccc;
-    }
-    .column h2 { margin-bottom: 8px; }
-
-    @media (max-width: 700px) {
-      .newspaper { grid-template-columns: 1fr; }
-      .masthead, .footer { grid-column: 1; }
+      padding: var(--space-2);
     }
   </style>
 </head>
 <body>
 
-  <div class="newspaper">
+  <header>
+    <h1>A Advik Gupta</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header class="masthead">
-      <h1>The Advik Daily</h1>
-      <p>Monday, 9 November 2026 | Bosscoder School of Technology</p>
-    </header>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a first-year BTech CSE (AI/ML) student at Bosscoder School of Technology who loves learning to code.</p>
+    </section>
 
-    <aside class="column">
-      <h2>Quick News</h2>
-      <p>Learning CSS Grid is fun. Grid lets us make rows and columns easily.</p>
-    </aside>
+    <section id="projects">
+      <h2>Projects</h2>
+      <article>
+        <h3>Project One</h3>
+        <p>A simple bio page built with HTML.</p>
+      </article>
+      <article>
+        <h3>Project Two</h3>
+        <p>My first portfolio website.</p>
+      </article>
+    </section>
 
-    <main class="column">
-      <h2>Main Story</h2>
-      <p>A. Advik Gupta, a first-year BTech CSE (AI/ML) student at Bosscoder School of Technology.</p>
-    </main>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:advikguptaallampally@gmail.com">advikguptaallampally@gmail.com</a></p>
+    </section>
+  </main>
 
-    <aside class="column">
-      <h2>Weather</h2>
-      <p>Sunny </p>
-    </aside>
-
-    <footer class="footer">
-      <p>&copy; 2026 A Advik Gupta | advikguptaallampally@gmail.com</p>
-    </footer>
-
-  </div>
+  <footer>
+    <p>&copy; 2026 A Advik Gupta | Bosscoder School of Technology</p>
+  </footer>
 
 </body>
 </html>

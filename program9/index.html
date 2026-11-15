@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Advik Gupta | Flexbox Navbar and Cards</title>
+  <style>
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #1e293b;
+      --color-light: #f1f5f9;
+      --color-white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--color-light);
+      color: var(--color-dark);
+    }
+
+    nav {
+      display: flex;                   
+      justify-content: space-between;   
+      align-items: center;              
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      padding: 16px 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;                       
+    }
+    .nav-links a {
+      color: var(--color-white);
+      text-decoration: none;
+    }
+
+    main { padding: 24px; }
+    h2 { margin-bottom: 16px; }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;                  
+      gap: 16px;
+    }
+
+    .card {
+      flex: 1 1 250px;
+      background-color: var(--color-white);
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Advik Gupta</h1>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Project One</h3>
+        <p>A simple bio page.</p>
+      </div>
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>My portfolio website.</p>
+      </div>
+      <div class="card">
+        <h3>Project Three</h3>
+        <p>Layout practice.</p>
+      </div>
+      <div class="card">
+        <h3>Project Four</h3>
+        <p>Flexbox practice.</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
